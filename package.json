@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@notion-render/bookmark-plugin": "^0.0.2",
+    "@notion-render/client": "^0.0.2",
+    "@notion-render/hljs-plugin": "^0.0.2",
+    "@notionhq/client": "^2.2.16",
     "@tailwindcss/postcss": "^4.0.8",
     "clsx": "^2.1.1",
     "daisyui": "^5.0.0-beta.8",
