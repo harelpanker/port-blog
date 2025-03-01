@@ -11,8 +11,8 @@ export const fetchPages = React.cache(() => {
 	return notion.databases.query({
 		database_id: process.env.NOTION_DATABASE_ID!,
 		filter: {
-			property: 'status',
-			select: {
+			property: 'Status',
+			status: {
 				equals: 'Live',
 			},
 		},
@@ -31,7 +31,7 @@ export const fetchBySlug = React.cache((slug: string) => {
 			},
 		})
 		.then((res) => {
-			res.results[0] as PageObjectResponse | undefined;
+			res.results[0] as PageObjectResponse | undefined | any;
 		});
 });
 
