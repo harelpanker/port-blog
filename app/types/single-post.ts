@@ -3,6 +3,7 @@ export interface Post {
 	slug: string;
 	seoTitle: string;
 	seoDescription: string;
+	description: string;
 	image: {
 		url: string;
 		width: number;

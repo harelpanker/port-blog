@@ -6,6 +6,7 @@ query SinglePost($slug: String!) {
         slug
         seoTitle
         seoDescription
+        description
         image {
             url
             width

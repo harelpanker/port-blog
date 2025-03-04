@@ -1,5 +1,5 @@
 import Container from '@/app/ui/container';
-import MobileIcon from '@/app/components/layout/navbar/mobile-icon';
+// import MobileIcon from '@/app/components/layout/navbar/mobile-icon';
 import NavbarCTA from '@/app/components/layout/navbar/navbar-cta';
 import NavbarLogo from './navbar/navbar-logo';
 
@@ -9,8 +9,8 @@ export default function Navber() {
 			<Container className='flex items-center'>
 				<div className='navbar-start gap-x-2'>
 					<div className='dropdown'>
-						<MobileIcon />
-						<ul
+						{/* <MobileIcon /> */}
+						{/* <ul
 							tabIndex={0}
 							className='menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow'>
 							<li>
@@ -32,11 +32,11 @@ export default function Navber() {
 							<li>
 								<a>Item 3</a>
 							</li>
-						</ul>
+						</ul> */}
 					</div>
 					<NavbarLogo />
 				</div>
-				<div className='navbar-center hidden lg:flex'>
+				{/* <div className='navbar-center hidden lg:flex'>
 					<ul className='menu menu-horizontal px-1'>
 						<li>
 							<a>Item 1</a>
@@ -58,7 +58,7 @@ export default function Navber() {
 							<a>Item 3</a>
 						</li>
 					</ul>
-				</div>
+				</div> */}
 				<NavbarCTA />
 			</Container>
 		</div>
