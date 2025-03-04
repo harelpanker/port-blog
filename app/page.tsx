@@ -2,6 +2,7 @@ import SectionHero from '@/app/components/home-page/section-hero';
 import { HygraphClient } from '@/app/lib/client';
 import { AllPosts } from '@/app/lib/queries/all-posts';
 import { AllPostsResponse, Post } from '@/app/types/all-posts';
+import SectionreadMore from '@/app/components/layout/section-read-more';
 
 async function getPosts(): Promise<Post[]> {
 	const client = HygraphClient();
@@ -15,6 +16,7 @@ export default async function Home() {
 	return (
 		<>
 			<SectionHero />
+			<SectionreadMore array={allPosts} />
 		</>
 	);
 }
