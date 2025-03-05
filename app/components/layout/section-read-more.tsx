@@ -7,7 +7,7 @@ export default function SectionReadMore({ array }: { array: Post[] }) {
 	return (
 		<Section>
 			<Container>
-				<ul className='flex flex-col gap-6 md:grid md:grid-cols-2'>
+				<ul className='flex flex-col gap-6 lg:grid lg:grid-cols-3'>
 					{array.map((post) => (
 						<PostCard key={post.slug} {...post} />
 					))}
