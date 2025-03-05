@@ -16,13 +16,17 @@ async function getData(slug: string): Promise<Post> {
 	return post;
 }
 
-export default async function Page({ params: { slug } }: { params: { slug: string } }) {
+export default async function Page(props: { params: Promise<{ slug: string }> }) {
+	const params = await props.params;
+
+	const { slug } = params;
+
 	const post = await getData(slug);
 
 	return (
-		<article className='flex flex-col gap-y-12 p-14 lg:py-24'>
+		<article className='flex flex-col gap-y-12 py-14 lg:py-24'>
 			<SectionHero title={post.title} description={post.description} image={post.image} />
-			<SectionBody body={post.body} />
+			<SectionBody tags={post.tag} author={post.author} body={post.body} />
 		</article>
 	);
 }

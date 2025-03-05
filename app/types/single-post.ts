@@ -1,3 +1,6 @@
+import { Author } from '@/app/types/author';
+import { Tag } from '@/app/types/tag';
+
 export interface Post {
 	title: string;
 	slug: string;
@@ -9,21 +12,8 @@ export interface Post {
 		width: number;
 		height: number;
 	};
-	tag: {
-		name: string;
-		slug: string;
-	}[];
-	author: {
-		name: string;
-		slug: string;
-		title: string;
-		linkedin: string;
-		image: {
-			url: string;
-			width: number;
-			height: number;
-		};
-	};
+	tag: Tag[];
+	author: Author[];
 	body: {
 		html: string;
 	};
