@@ -18,6 +18,7 @@ async function getData(slug: string): Promise<Post> {
 
 export default async function Page({ params: { slug } }: { params: { slug: string } }) {
 	const post = await getData(slug);
+
 	return (
 		<article className='flex flex-col gap-y-12 p-14 lg:py-24'>
 			<SectionHero title={post.title} description={post.description} image={post.image} />
