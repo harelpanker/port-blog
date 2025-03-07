@@ -1,11 +1,41 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import Container from '@/app/ui/container';
 // import MobileIcon from '@/app/components/layout/navbar/mobile-icon';
 import NavbarCTA from '@/app/components/layout/navbar/navbar-cta';
 import NavbarLogo from './navbar/navbar-logo';
+import {
+	useWindowScroll,
+	// useViewportSize
+} from '@mantine/hooks';
 
 export default function Navber() {
+	// const desktopWidth = 1024;
+	const [scroll] = useWindowScroll();
+	// const { width } = useViewportSize();
+	const [isVisible, setIsVisible] = useState(true);
+	const [lastScrollY, setLastScrollY] = useState(0);
+
+	useEffect(() => {
+		if (scroll.y > 50) {
+			if (scroll.y > lastScrollY) {
+				setIsVisible(false);
+			} else if (scroll.y < lastScrollY) {
+				setIsVisible(true);
+			}
+		} else {
+			setIsVisible(true);
+		}
+
+		setLastScrollY(scroll.y);
+	}, [scroll.y, lastScrollY]);
+
 	return (
-		<div className='navbar bg-base-100 sticky top-0 z-50'>
+		<div
+			className={`${!isVisible ? '-translate-y-full' : 'translate-y-0'} ${
+				scroll.y > 10 ? 'border-base-200' : 'border-transparent'
+			} navbar bg-base-100 transition-border-color sticky top-0 z-50 border-b transition-transform duration-300`}>
 			<Container className='flex items-center'>
 				<div className='navbar-start gap-x-2'>
 					<div className='dropdown'>
