@@ -19,7 +19,9 @@ export default function SectionBody({ body, tags, author }: Props) {
 				<div className='order-last lg:order-none'>
 					<Aside tags={tags} author={author} />
 				</div>
-				<div className='prose xl:prose-xl mx-auto lg:col-span-3' dangerouslySetInnerHTML={{ __html: body.html }}></div>
+				<div
+					className='prose prose-img:rounded-xl xl:prose-xl mx-auto lg:col-span-3'
+					dangerouslySetInnerHTML={{ __html: body.html }}></div>
 			</Container>
 		</Section>
 	);
