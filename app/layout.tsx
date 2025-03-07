@@ -6,14 +6,14 @@ import PageWrapper from '@/app/ui/page-wrapper';
 import Section from '@/app/ui/section';
 import Footer from '@/app/components/layout/footer';
 import Navber from '@/app/components/layout/navbar';
-import './globals.css';
 import { ThemeProvider } from '@/app/lib/theme-toggle';
+import './globals.css';
 
 export const metadata: Metadata = layoutMetadata;
 
 export default function RootLayout({ children }: Readonly<Children>) {
 	return (
-		<html lang='en' dir='ltr' className={`${dm_sans.variable} ${spack_grotesk.variable}`}>
+		<html lang='en' dir='ltr' className={`${dm_sans.variable} ${spack_grotesk.variable} scroll-smooth`}>
 			<body className={`font-dm-sans antialiased`}>
 				<ThemeProvider>
 					<PageWrapper>
