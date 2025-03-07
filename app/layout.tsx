@@ -13,7 +13,7 @@ export const metadata: Metadata = layoutMetadata;
 
 export default function RootLayout({ children }: Readonly<Children>) {
 	return (
-		<html lang='en' dir='ltr' className={`${dm_sans.variable} ${spack_grotesk.variable}`}>
+		<html lang='en' dir='ltr' className={`${dm_sans.variable} ${spack_grotesk.variable} scroll-smooth`}>
 			<body className={`font-dm-sans antialiased`}>
 				<ThemeProvider>
 					<PageWrapper>
