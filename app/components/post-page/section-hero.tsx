@@ -5,10 +5,12 @@ import { Text } from '@/app/ui/text';
 import Image from 'next/image';
 import Link from 'next/link';
 import Arrow from '@/app/components/post-page/section-hero/arrow';
+import SharePost from '@/app/components/post-page/section-body/share-post';
 
 type Props = {
 	title: string;
 	description: string;
+	slug: string;
 	image: {
 		url: string;
 		width: number;
@@ -16,7 +18,7 @@ type Props = {
 	};
 };
 
-export default function SectionHero({ title, description, image }: Props) {
+export default function SectionHero({ title, description, image, slug }: Props) {
 	return (
 		<Section>
 			<Container className='flex flex-col gap-y-6 lg:gap-y-12'>
@@ -39,6 +41,7 @@ export default function SectionHero({ title, description, image }: Props) {
 						height={image.height}
 					/>
 				</figure>
+				<SharePost title={title} slug={slug} />
 			</Container>
 		</Section>
 	);

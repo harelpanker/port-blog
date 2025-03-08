@@ -42,6 +42,7 @@ export default async function Page(props: { params: Promise<{ slug: string }> })
 	const params = await props.params;
 
 	const { slug } = params;
+	// console.log(slug); // mastering-slack-for-admins
 
 	const post = await getData(slug);
 
@@ -49,7 +50,7 @@ export default async function Page(props: { params: Promise<{ slug: string }> })
 
 	return (
 		<article className='relative flex flex-col gap-y-12 py-14 lg:py-24'>
-			<SectionHero title={post.title} description={post.description} image={post.image} />
+			<SectionHero slug={slug} title={post.title} description={post.description} image={post.image} />
 			<SectionBody tags={post.tag} author={post.author} body={post.body} />
 		</article>
 	);

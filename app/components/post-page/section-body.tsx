@@ -37,7 +37,7 @@ export default function SectionBody({ body, tags, author }: Props) {
 				</div>
 				<div
 					ref={contentRef}
-					className='prose prose-h2:scroll-mt-12 prose-h3:scroll-mt-12 prose-img:rounded-xl xl:prose-xl mx-auto lg:col-span-3'
+					className='prose prose-h2:scroll-mt-14 prose-h3:scroll-mt-14 prose-img:rounded-xl xl:prose-xl mx-auto lg:col-span-3'
 					dangerouslySetInnerHTML={{ __html: body.html }}></div>
 			</Container>
 		</Section>
