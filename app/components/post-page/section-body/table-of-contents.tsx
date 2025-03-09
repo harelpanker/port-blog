@@ -51,7 +51,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ html }) => {
 			</Heading>
 			<ul className='group space-y-2'>
 				{headings.map((heading, index) => (
-					<li key={index} style={{ marginLeft: `${(heading.level - 1) * 0.75}rem` }}>
+					<li key={index} style={{ marginLeft: `${(heading.level - 1) * 0.85}rem` }}>
 						<Link
 							className='transition-opacity duration-300 hover:!opacity-100 group-hover:opacity-60'
 							href={`#${heading.id}`}>

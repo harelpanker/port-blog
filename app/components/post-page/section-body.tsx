@@ -35,10 +35,12 @@ export default function SectionBody({ body, tags, author }: Props) {
 				<div className='order-last lg:order-none'>
 					<Aside tags={tags} author={author} html={body.html} />
 				</div>
-				<div
-					ref={contentRef}
-					className='prose prose-h2:scroll-mt-14 prose-h3:scroll-mt-14 prose-img:rounded-xl xl:prose-xl mx-auto lg:col-span-3'
-					dangerouslySetInnerHTML={{ __html: body.html }}></div>
+				<div className='flex flex-col lg:col-span-3'>
+					<div
+						ref={contentRef}
+						className='prose prose-h2:scroll-mt-14 prose-h3:scroll-mt-14 prose-img:rounded-xl xl:prose-xl mx-auto'
+						dangerouslySetInnerHTML={{ __html: body.html }}></div>
+				</div>
 			</Container>
 		</Section>
 	);
