@@ -11,7 +11,7 @@ export default function Aside({ tags, author, html }: Props) {
 	const desktopSize = 1024;
 	const { width } = useViewportSize();
 	return (
-		<aside className='bg-base-200 border-base-300 flex flex-col gap-y-12 rounded-xl p-6 lg:sticky lg:top-24'>
+		<aside className='bg-base-200 border-base-300 flex max-h-[80dvh] flex-col gap-y-12 overflow-y-auto rounded-xl p-6 lg:sticky lg:top-24'>
 			{width > desktopSize ? <TableOfContents html={html} /> : null}
 			<Author authors={author} />
 			{width > desktopSize ? <Tags array={tags} /> : null}
