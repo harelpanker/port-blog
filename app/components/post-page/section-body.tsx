@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Section from '@/app/ui/section';
 import Container from '@/app/ui/container';
 import { Author } from '@/app/types/author';
@@ -8,14 +9,20 @@ import { Tag } from '@/app/types/tag';
 import Aside from '@/app/components/post-page/section-body/aside';
 
 type Props = {
+	title: string;
 	body: {
 		html: string;
 	};
 	tags: Tag[];
 	author: Author[];
+	image: {
+		url: string;
+		width: number;
+		height: number;
+	};
 };
 
-export default function SectionBody({ body, tags, author }: Props) {
+export default function SectionBody({ body, tags, author, image, title }: Props) {
 	const contentRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -35,7 +42,17 @@ export default function SectionBody({ body, tags, author }: Props) {
 				<div className='order-last lg:order-none'>
 					<Aside tags={tags} author={author} html={body.html} />
 				</div>
-				<div className='flex flex-col lg:col-span-3'>
+				<div className='flex flex-col gap-y-6 lg:col-span-3'>
+					<figure className='relative aspect-video w-full overflow-hidden rounded-2xl lg:rounded-3xl'>
+						<Image
+							className='h-full w-full object-cover'
+							loading='eager'
+							src={image.url}
+							alt={title}
+							width={image.width}
+							height={image.height}
+						/>
+					</figure>
 					<div
 						ref={contentRef}
 						className='prose prose-h2:scroll-mt-14 prose-h3:scroll-mt-14 prose-img:rounded-xl xl:prose-xl mx-auto'

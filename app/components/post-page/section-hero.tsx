@@ -11,14 +11,9 @@ type Props = {
 	title: string;
 	description: string;
 	slug: string;
-	image: {
-		url: string;
-		width: number;
-		height: number;
-	};
 };
 
-export default function SectionHero({ title, description, image, slug }: Props) {
+export default function SectionHero({ title, description, slug }: Props) {
 	return (
 		<Section>
 			<Container className='flex flex-col gap-y-6 lg:gap-y-12'>
@@ -31,16 +26,6 @@ export default function SectionHero({ title, description, image, slug }: Props) 
 					<Heading level={1}>{title}</Heading>
 					<Text className='max-w-prose xl:text-xl'>{description}</Text>
 				</div>
-				<figure className='relative aspect-video w-full overflow-hidden rounded-2xl lg:rounded-3xl'>
-					<Image
-						className='h-full w-full object-cover'
-						loading='eager'
-						src={image.url}
-						alt={title}
-						width={image.width}
-						height={image.height}
-					/>
-				</figure>
 				<SharePost title={title} slug={slug} />
 			</Container>
 		</Section>
