@@ -2,7 +2,6 @@ import Container from '@/app/ui/container';
 import { Heading } from '@/app/ui/heading';
 import Section from '@/app/ui/section';
 import { Text } from '@/app/ui/text';
-import Image from 'next/image';
 import Link from 'next/link';
 import Arrow from '@/app/components/post-page/section-hero/arrow';
 import SharePost from '@/app/components/post-page/section-body/share-post';
