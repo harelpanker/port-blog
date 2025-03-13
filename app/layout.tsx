@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { dm_sans, spack_grotesk } from '@/app/lib/fonts';
 import { Children } from '@/app/types/children';
-import { layoutMetadata } from '@/app/lib/layout-metadata';
 import PageWrapper from '@/app/ui/page-wrapper';
 import Section from '@/app/ui/section';
 import Footer from '@/app/components/layout/footer';
