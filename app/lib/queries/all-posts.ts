@@ -1,6 +1,6 @@
 export const AllPosts = `
   query AllPosts {
-    posts(orderBy: publishedAt_DESC, stage: PUBLISHED) {
+    posts(orderBy: createdAt_DESC, stage: PUBLISHED) {
         title
         slug
         description
