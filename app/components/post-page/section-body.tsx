@@ -43,7 +43,7 @@ export default function SectionBody({ body, tags, author, image, title }: Props)
 					<Aside tags={tags} author={author} html={body.html} />
 				</div>
 				<div className='flex flex-col gap-y-6 lg:col-span-3'>
-					<figure className='relative aspect-video w-full overflow-hidden rounded-2xl lg:rounded-3xl'>
+					<figure className='relative mx-auto aspect-video w-full max-w-prose overflow-hidden rounded-2xl lg:rounded-3xl 2xl:max-w-[55.625rem]'>
 						<Image
 							className='h-full w-full object-cover'
 							loading='eager'
@@ -55,7 +55,7 @@ export default function SectionBody({ body, tags, author, image, title }: Props)
 					</figure>
 					<div
 						ref={contentRef}
-						className='prose prose-h2:scroll-mt-14 prose-h3:scroll-mt-14 prose-img:rounded-xl xl:prose-xl mx-auto'
+						className='prose prose-h2:scroll-mt-14 prose-h3:scroll-mt-14 prose-img:rounded-xl 2xl:prose-xl mx-auto'
 						dangerouslySetInnerHTML={{ __html: body.html }}></div>
 				</div>
 			</Container>

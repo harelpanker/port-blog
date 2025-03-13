@@ -1,11 +1,9 @@
-import { ButtonLink } from '@/app/ui/link';
+import Toggle from '@/app/components/layout/toggle';
 
 export default function NavbarCTA() {
 	return (
 		<div className='navbar-end'>
-			<ButtonLink href='/' className='btn-wide'>
-				Start reading
-			</ButtonLink>
+			<Toggle />
 		</div>
 	);
 }

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Container from '@/app/ui/container';
 // import MobileIcon from '@/app/components/layout/navbar/mobile-icon';
-// import NavbarCTA from '@/app/components/layout/navbar/navbar-cta';
+import NavbarCTA from '@/app/components/layout/navbar/navbar-cta';
 import NavbarLogo from './navbar/navbar-logo';
 import {
 	useWindowScroll,
@@ -89,7 +89,7 @@ export default function Navber() {
 						</li>
 					</ul>
 				</div> */}
-				{/* <NavbarCTA /> */}
+				<NavbarCTA />
 			</Container>
 		</div>
 	);
