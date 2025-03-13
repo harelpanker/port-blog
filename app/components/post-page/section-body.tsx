@@ -38,11 +38,11 @@ export default function SectionBody({ body, tags, author, image, title }: Props)
 
 	return (
 		<Section>
-			<Container className='flex flex-col gap-y-6 lg:grid lg:grid-cols-4 lg:gap-x-14'>
-				<div className='order-last lg:order-none'>
+			<Container className='flex flex-col gap-y-6 lg:grid lg:grid-cols-6 lg:gap-x-14 2xl:grid-cols-4'>
+				<div className='order-last lg:order-none lg:col-span-2 2xl:col-span-1'>
 					<Aside tags={tags} author={author} html={body.html} />
 				</div>
-				<div className='flex flex-col gap-y-6 lg:col-span-3'>
+				<div className='flex flex-col gap-y-6 lg:col-span-4 2xl:col-span-3'>
 					<figure className='relative mx-auto aspect-video w-full max-w-prose overflow-hidden rounded-2xl lg:rounded-3xl 2xl:max-w-[55.625rem]'>
 						<Image
 							className='h-full w-full object-cover'

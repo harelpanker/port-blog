@@ -29,7 +29,7 @@ export default function PostCard({ title, description, image, slug }: Post) {
 					className='rounded-2xl'
 				/>
 			</motion.div>
-			<article className='card bg-base-100 w-full shadow-sm'>
+			<article className='card bg-base-100 h-full w-full shadow-sm'>
 				<figure>
 					<Image src={image.url} alt={title} width={image.width} height={image.height} />
 				</figure>
