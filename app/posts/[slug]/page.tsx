@@ -2,11 +2,9 @@ import SectionBody from '@/app/components/post-page/section-body';
 import SectionHero from '@/app/components/post-page/section-hero';
 import { HygraphClient } from '@/app/lib/client';
 import { singlePost } from '@/app/lib/queries/single-post';
+// import { RelatedPosts } from '@/app/lib/queries/related-posts';
 import { Post } from '@/app/types/single-post';
 import { notFound } from 'next/navigation';
-
-// https://github.com/hygraph/hygraph-nextjs-blog-starter/blob/main/src/app/posts/%5Bslug%5D/page.jsx
-// https://nextjs.org/docs/messages/sync-dynamic-apis
 
 async function getData(slug: string): Promise<Post> {
 	const client = HygraphClient();

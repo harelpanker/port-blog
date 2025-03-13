@@ -8,6 +8,11 @@ import { Author } from '@/app/types/author';
 import { Tag } from '@/app/types/tag';
 import Aside from '@/app/components/post-page/section-body/aside';
 
+import parse from 'html-react-parser';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/atom-one-dark.css';
+import './section-body/style.css';
+
 type Props = {
 	title: string;
 	body: {
@@ -36,6 +41,12 @@ export default function SectionBody({ body, tags, author, image, title }: Props)
 		}
 	}, [body.html]);
 
+	useEffect(() => {
+		if (contentRef.current) {
+			hljs.highlightAll(); // ✅ Automatically highlights all code blocks inside the component
+		}
+	}, [body.html]);
+
 	return (
 		<Section>
 			<Container className='flex flex-col gap-y-6 lg:grid lg:grid-cols-6 lg:gap-x-14 2xl:grid-cols-4'>
@@ -54,9 +65,10 @@ export default function SectionBody({ body, tags, author, image, title }: Props)
 						/>
 					</figure>
 					<div
-						ref={contentRef}
 						className='prose prose-h2:scroll-mt-14 prose-h3:scroll-mt-14 prose-img:rounded-xl 2xl:prose-xl mx-auto'
-						dangerouslySetInnerHTML={{ __html: body.html }}></div>
+						ref={contentRef}>
+						{parse(body.html)}
+					</div>
 				</div>
 			</Container>
 		</Section>

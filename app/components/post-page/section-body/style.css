@@ -1,0 +1,10 @@
+.hljs {
+	background: transparent !important;
+	color: #abb2bf !important;
+}
+pre code.hljs {
+	padding: 0 !important;
+}
+pre {
+	background-color: #1c212b !important;
+}

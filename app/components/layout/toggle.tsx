@@ -13,7 +13,7 @@ export default function Toggle() {
 			<input
 				type='checkbox'
 				value='synthwave'
-				checked={theme === 'nord'}
+				checked={theme === 'dim'}
 				className='theme-controller'
 				onChange={() => toggleTheme()}
 			/>

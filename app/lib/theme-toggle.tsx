@@ -8,17 +8,17 @@ type ThemeContextType = {
 };
 
 export const ThemeContext = createContext<ThemeContextType>({
-	theme: 'nord',
+	theme: 'dim',
 	toggleTheme: () => {},
 });
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-	const [theme, setTheme] = useState('nord');
+	const [theme, setTheme] = useState('dim');
 	const [isMounted, setIsMounted] = useState(false);
 
 	useEffect(() => {
 		setIsMounted(true);
-		const storedTheme = localStorage.getItem('theme') || 'nord';
+		const storedTheme = localStorage.getItem('theme') || 'dim';
 		setTheme(storedTheme);
 	}, []);
 
@@ -27,7 +27,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 	}
 
 	const toggleTheme = () => {
-		const newTheme = theme === 'nord' ? 'dim' : 'nord';
+		const newTheme = theme === 'dim' ? 'nord' : 'dim';
 		setTheme(newTheme);
 		localStorage.setItem('theme', newTheme);
 	};
