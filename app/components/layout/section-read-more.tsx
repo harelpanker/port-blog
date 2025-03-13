@@ -6,8 +6,8 @@ import Section from '@/app/ui/section';
 export default function SectionReadMore({ array }: { array: Post[] }) {
 	return (
 		<Section>
-			<Container>
-				<ul className='flex flex-col gap-6 lg:grid lg:grid-cols-3'>
+			<Container className='!max-w-7xl'>
+				<ul className='flex flex-col gap-x-6 lg:grid lg:grid-cols-3 lg:gap-y-16'>
 					{array.map((post) => (
 						<PostCard key={post.slug} {...post} />
 					))}

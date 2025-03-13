@@ -48,7 +48,7 @@ export default async function Page(props: { params: Promise<{ slug: string }> })
 	if (!post) return notFound();
 
 	return (
-		<article className='relative flex flex-col gap-y-12 py-14 lg:py-24'>
+		<article className='relative flex flex-col gap-y-12 py-14 lg:py-16'>
 			<SectionHero slug={slug} title={post.title} description={post.description} />
 			<SectionBody tags={post.tag} author={post.author} body={post.body} image={post.image} title={post.title} />
 		</article>
