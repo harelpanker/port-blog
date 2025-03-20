@@ -8,6 +8,7 @@ import Navber from '@/app/components/layout/navbar';
 import { ThemeProvider } from '@/app/lib/theme-toggle';
 import './globals.css';
 
+const COMPANY_NAME = 'Port.io';
 const SITE_URL = 'https://productmanagement.port.io/';
 const SITE_TITLE = 'Product management @ Port';
 const SITE_DESCRIPTION = 'Product management, building developer tools, and the challenges along the way.';
@@ -15,10 +16,10 @@ const SITE_DESCRIPTION = 'Product management, building developer tools, and the 
 export const metadata: Metadata = {
 	title: SITE_TITLE,
 	description: SITE_DESCRIPTION,
-	generator: 'Next.js',
-	applicationName: 'Port.io',
+	generator: COMPANY_NAME,
+	applicationName: COMPANY_NAME,
 	referrer: 'origin-when-cross-origin',
-	creator: 'Port.io',
+	creator: COMPANY_NAME,
 	keywords: [
 		'Product Management',
 		'Product Manager Blog',
