@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 	title: SITE_TITLE,
 	description: SITE_DESCRIPTION,
 	generator: 'Next.js',
-	applicationName: 'Next.js',
+	applicationName: 'Port.io',
 	referrer: 'origin-when-cross-origin',
 	creator: 'Port.io',
 	keywords: [
