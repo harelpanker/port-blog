@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
 		url: SITE_URL,
-		siteName: 'panker.dev',
+		siteName: SITE_TITLE,
 		locale: 'en_US',
 	},
 	twitter: {
