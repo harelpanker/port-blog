@@ -1,29 +1,9 @@
 // page.tsx - post page
 import SectionBody from "@/app/components/post-page/section-body";
 import SectionHero from "@/app/components/post-page/section-hero";
-import { HygraphClient } from "@/app/lib/client";
-import { singlePost } from "@/app/lib/queries/single-post";
-import { RelatedPosts } from "@/app/lib/queries/related-posts";
-import { AllPostsResponse } from "@/app/types/all-posts";
-import { Post } from "@/app/types/single-post";
 import { notFound } from "next/navigation";
 import SectionReadMore from "@/app/components/layout/section-read-more";
-
-async function getData(slug: string): Promise<Post> {
-  const client = HygraphClient();
-
-  const variables = { slug: slug };
-
-  const { post }: { post: Post } = await client.request(singlePost, variables);
-  return post;
-}
-
-async function getRelatedPosts(postId: string) {
-  const client = HygraphClient();
-  const variables = { currentPostId: postId };
-  const data = await client.request<AllPostsResponse>(RelatedPosts, variables);
-  return data.posts;
-}
+import { getData, getRelatedPosts } from "@/app/lib/get-post-data";
 
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>;
@@ -58,6 +38,7 @@ export default async function Page(props: {
   const post = await getData(slug);
 
   if (!post) return notFound();
+  // console.log(post); // publishedAt: '2025-03-20T09:36:05.287168+00:00',
 
   const relatedPosts = await getRelatedPosts(post.id);
 
@@ -67,11 +48,12 @@ export default async function Page(props: {
         <SectionHero
           slug={slug}
           title={post.title}
+          author={post.author}
           description={post.description}
+          date={post.publishedAt}
         />
         <SectionBody
           tags={post.tag}
-          author={post.author}
           body={post.body}
           image={post.image}
           title={post.title}

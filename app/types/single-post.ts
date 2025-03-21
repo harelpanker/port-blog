@@ -3,6 +3,7 @@ import { Tag } from "@/app/types/tag";
 
 export interface Post {
   id: string;
+  publishedAt: string;
   title: string;
   slug: string;
   seoTitle: string;

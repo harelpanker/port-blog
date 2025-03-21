@@ -17,7 +17,6 @@ export default async function Home() {
     <>
       <SectionHero />
       <SectionReadMore array={allPosts} />
-      <div className="h-14 lg:h-32"></div>
     </>
   );
 }
