@@ -1,6 +1,7 @@
 export const singlePost = `
 query SinglePost($slug: String!) {
     post(where: { slug: $slug }) {
+        id
         publishedAt
         title
         slug
