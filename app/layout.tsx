@@ -5,7 +5,7 @@ import Section from "@/app/ui/section";
 import Footer from "@/app/components/layout/footer";
 import Navber from "@/app/components/layout/navbar";
 import { ThemeProvider } from "@/app/lib/theme-toggle";
-import PaddingBottom from "@/app/ui/PaddingBottom";
+import PaddingBottom from "@/app/ui/padding-bottom";
 import { siteMetadata } from "@/app/lib/metadata";
 import "./globals.css";
 
