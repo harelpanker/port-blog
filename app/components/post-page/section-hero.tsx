@@ -7,7 +7,6 @@ import { Author as AuthorType } from "@/app/types/author";
 import Arrow from "@/app/components/post-page/section-hero/arrow";
 import SharePost from "@/app/components/post-page/section-body/share-post";
 import Author from "../layout/author";
-import Dot from "@/app/ui/icons/dot";
 import { formatDate } from "@/app/lib/formatDate";
 
 type Props = {
@@ -40,9 +39,6 @@ export default function SectionHero({
         <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-6">
           <div className="flex flex-wrap items-center gap-x-8 gap-y-5">
             <Author authors={author} />
-            <div className="hidden sm:flex">
-              <Dot />
-            </div>
             <div>{formatDate(date)}</div>
           </div>
           <SharePost title={title} slug={slug} />
