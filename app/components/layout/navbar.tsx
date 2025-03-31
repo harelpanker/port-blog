@@ -1,19 +1,34 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Container from '@/app/ui/container';
-// import MobileIcon from '@/app/components/layout/navbar/mobile-icon';
+import MobileIcon from '@/app/components/layout/navbar/mobile-icon';
 import NavbarCTA from '@/app/components/layout/navbar/navbar-cta';
-import NavbarLogo from './navbar/navbar-logo';
-import {
-	useWindowScroll,
-	// useViewportSize
-} from '@mantine/hooks';
+import NavbarLogo from '@/app/components/layout/navbar/navbar-logo';
+import { useWindowScroll } from '@mantine/hooks';
+
+const menuItems: { label: string; href: string }[] = [
+	{ label: 'Port.io', href: 'https://www.port.io/' },
+	{ label: 'Join Us', href: 'https://www.port.io/careers' },
+];
+
+const MenuItem = ({ label, href }: { label: string; href: string }) => {
+	return (
+		<li>
+			{href.includes('https') ? (
+				<a href={href} target='_blank' rel='noopener noreferrer'>
+					{label}
+				</a>
+			) : (
+				<Link href={href}>{label}</Link>
+			)}
+		</li>
+	);
+};
 
 export default function Navber() {
-	// const desktopWidth = 1024;
 	const [scroll] = useWindowScroll();
-	// const { width } = useViewportSize();
 	const [isVisible, setIsVisible] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -34,61 +49,31 @@ export default function Navber() {
 	return (
 		<div
 			className={`${!isVisible ? '-translate-y-full' : 'translate-y-0'} ${
-				scroll.y > 10 ? 'border-base-200' : 'border-transparent'
-			} navbar bg-base-100 transition-border-color sticky top-0 z-50 border-b transition-transform duration-300`}>
+				scroll.y > 10
+					? 'border-base-200 bg-base-100/60 backdrop-blur-sm'
+					: 'bg-base-100 border-transparent backdrop-blur-none'
+			} navbar transition-border-color sticky top-0 z-50 border-b transition-transform duration-300`}>
 			<Container className='flex items-center'>
 				<div className='navbar-start gap-x-2'>
 					<div className='dropdown'>
-						{/* <MobileIcon /> */}
-						{/* <ul
+						<MobileIcon />
+						<ul
 							tabIndex={0}
 							className='menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow'>
-							<li>
-								<a>Item 1</a>
-							</li>
-							<li>
-								<details>
-									<summary>Parent</summary>
-									<ul className='min-w-max p-2'>
-										<li>
-											<a>Submenu 1</a>
-										</li>
-										<li>
-											<a>Submenu 2</a>
-										</li>
-									</ul>
-								</details>
-							</li>
-							<li>
-								<a>Item 3</a>
-							</li>
-						</ul> */}
+							{menuItems.map((item) => (
+								<MenuItem key={item.label} label={item.label} href={item.href} />
+							))}
+						</ul>
 					</div>
 					<NavbarLogo />
 				</div>
-				{/* <div className='navbar-center hidden lg:flex'>
+				<div className='navbar-center hidden lg:flex'>
 					<ul className='menu menu-horizontal px-1'>
-						<li>
-							<a>Item 1</a>
-						</li>
-						<li>
-							<details>
-								<summary>Parent</summary>
-								<ul className='min-w-max p-2'>
-									<li>
-										<a>Submenu 1</a>
-									</li>
-									<li>
-										<a>Submenu 2</a>
-									</li>
-								</ul>
-							</details>
-						</li>
-						<li>
-							<a>Item 3</a>
-						</li>
+						{menuItems.map((item) => (
+							<MenuItem key={item.label} label={item.label} href={item.href} />
+						))}
 					</ul>
-				</div> */}
+				</div>
 				<NavbarCTA />
 			</Container>
 		</div>
