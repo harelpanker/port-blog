@@ -50,7 +50,7 @@ export default function SectionBody({ body, tags, image, title }: Props) {
   return (
     <Section>
       <Container className="flex flex-col gap-y-6 lg:grid lg:grid-cols-6 lg:gap-x-14 2xl:grid-cols-4">
-        <div className="order-last lg:order-none lg:col-span-2 2xl:col-span-1">
+        <div className="order-last hidden lg:order-none lg:col-span-2 lg:block 2xl:col-span-1">
           <Aside tags={tags} html={body.html} />
         </div>
         <div className="flex flex-col gap-y-6 lg:col-span-4 2xl:col-span-3">
@@ -65,7 +65,7 @@ export default function SectionBody({ body, tags, image, title }: Props) {
             />
           </figure>
           <div
-            className="prose prose-h2:scroll-mt-14 prose-h3:scroll-mt-14 prose-img:rounded-xl 2xl:prose-xl mx-auto"
+            className="prose prose-h2:scroll-mt-14 prose-h3:scroll-mt-14 prose-img:rounded-xl 2xl:prose-xl mx-auto max-w-full"
             ref={contentRef}
           >
             {parse(body.html)}
