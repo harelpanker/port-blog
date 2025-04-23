@@ -8,6 +8,7 @@ query SinglePost($slug: String!) {
         seoTitle
         seoDescription
         description
+        canonical
         image {
             url
             width

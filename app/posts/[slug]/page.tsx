@@ -14,6 +14,9 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
 	return {
 		title: post.seoTitle,
 		description: post.seoDescription,
+		alternates: {
+			canonical: post.canonical ? post.canonical : `https://productmanagement.port.io/posts/${post.slug}`,
+		},
 		openGraph: {
 			images: [
 				{
