@@ -4,6 +4,10 @@ export const AllPosts = `
         title
         slug
         description
+      tag {
+        name
+        slug
+    }
         image {
             url
             width

@@ -11,6 +11,10 @@ export const RelatedPosts = `
       title
       slug
       description
+      tag {
+        name
+        slug
+    }
       image {
         url
         width
