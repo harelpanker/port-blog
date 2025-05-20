@@ -38,7 +38,7 @@ export default function PostCard({ title, description, image, slug, tag }: Post)
 				<div className='card-body p-5 md:p-8'>
 					<Tags array={tag} />
 					<h2 className='card-title'>{title}</h2>
-					<p>{description}</p>
+					<p className='line-clamp-3'>{description}</p>
 					<div
 						onMouseEnter={() => setHover(true)}
 						onMouseLeave={() => setHover(false)}
